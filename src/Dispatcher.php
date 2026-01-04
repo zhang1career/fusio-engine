@@ -29,7 +29,9 @@ namespace Fusio\Engine;
  */
 class Dispatcher implements DispatcherInterface
 {
-    public function dispatch(string $eventName, mixed $payload): void
+    public function dispatch(string $eventName,
+                             mixed  $payload,
+                             array  $headers = []): void
     {
     }
 }
