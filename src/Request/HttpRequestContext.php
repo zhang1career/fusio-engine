@@ -32,7 +32,15 @@ use PSX\Http\RequestInterface;
  */
 class HttpRequestContext implements RequestContextInterface
 {
+    public const X_REQUEST_ID = 'X-Request-Id';
+
+    public const X_API_KEY = 'X-API-Key';
+
+    public const X_EVENT_CODE = 'X-Event-Code';
+
+
     private RequestInterface $request;
+
     private array $parameters;
 
     public function __construct(RequestInterface $request, array $parameters)
