@@ -30,6 +30,7 @@ namespace Fusio\Engine;
 class Context implements ContextInterface
 {
     private int $operationId;
+    private int $operationUsability;
     private string $baseUrl;
     private Model\AppInterface $app;
     private Model\UserInterface $user;
@@ -37,18 +38,24 @@ class Context implements ContextInterface
     private ?Model\ActionInterface $action = null;
     private mixed $connection;
 
-    public function __construct(int $operationId, string $baseUrl, Model\AppInterface $app, Model\UserInterface $user, ?string $tenantId = null)
+    public function __construct(int $operationId, string $baseUrl, Model\AppInterface $app, Model\UserInterface $user, ?string $tenantId = null, int $operationUsability = 0)
     {
         $this->operationId = $operationId;
         $this->baseUrl = $baseUrl;
         $this->app = $app;
         $this->user = $user;
         $this->tenantId = !empty($tenantId) ? $tenantId : null;
+        $this->operationUsability = $operationUsability;
     }
 
     public function getOperationId(): int
     {
         return $this->operationId;
+    }
+
+    public function getOperationUsability(): int
+    {
+        return $this->operationUsability;
     }
 
     public function getBaseUrl(): string
@@ -101,6 +108,7 @@ class Context implements ContextInterface
     {
         return [
             'operationId' => $this->operationId,
+            'operationUsability' => $this->operationUsability,
             'baseUrl' => $this->baseUrl,
             'app' => $this->app,
             'user' => $this->user,

@@ -1,5 +1,6 @@
 {
   "operationId": 1,
+  "operationUsability": 0,
   "baseUrl": "https:\/\/api.acme.com",
   "app": {
     "anonymous": false,

@@ -38,6 +38,11 @@ interface ContextInterface extends \JsonSerializable
     public function getOperationId(): int;
 
     /**
+     * Operation usability from fusio_operation.usability: 0 = internal (Fusio token), 1 = external (client bearer forwarded).
+     */
+    public function getOperationUsability(): int;
+
+    /**
      * Returns the base url of the system to generate i.e. HATEOAS links. The url has a trailing slash
      */
     public function getBaseUrl(): string;
