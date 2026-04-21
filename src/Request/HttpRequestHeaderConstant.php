@@ -15,4 +15,8 @@ class HttpRequestHeaderConstant
 
     public const X_EVENT_CODE = 'X-Event-Code';
     public const X_EVENT_CODE_LOWER = 'x-event-code';
+
+    /** Raw user JWT for external user-center APIs (not {@code Authorization: Bearer}) */
+    public const X_USER_ACCESS_TOKEN = 'X-User-Access-Token';
+    public const X_USER_ACCESS_TOKEN_LOWER = 'x-user-access-token';
 }
